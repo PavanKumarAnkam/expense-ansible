@@ -2,7 +2,7 @@
   hosts: db
   become: yes
   vars:
-    login_host: db.daws78s.online
+    login_host: 172.31.87.113
   vars_prompt:
     - name: mysql_root_password
       prompt: Please enter MySQL root password
@@ -30,7 +30,7 @@
       community.mysql.mysql_info:
         login_user: root
         login_password: "{{ mysql_root_password }}"
-        login_host: "{{ login_host }}"
+        login_host: 172.31.87.113
         filter: version
       ignore_errors: yes
       register: mysql_connection_output
